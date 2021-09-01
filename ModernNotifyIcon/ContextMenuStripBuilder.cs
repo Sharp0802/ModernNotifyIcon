@@ -51,11 +51,43 @@ namespace ModernNotifyIcon
             var optionRef = new ToggleGenerateOption();
             option.Invoke(optionRef);
             var toggle = new ToolStripButton(optionRef.Text);
-            toggle.Click += (_, _) => {
-                optionRef.InvokeHandlers(toggle.Checked = !toggle.Checked);
-            };
+            toggle.Click += (_, _) => optionRef.InvokeHandlers(toggle.Checked = !toggle.Checked);
             return this;
         }
+
+        public sealed class ButtonGenerateOption
+        {
+            public string? Text { get; private set; }
+
+            public event Action? Toggled;
+
+            public ButtonGenerateOption SetText(string text)
+            {
+                Text = text;
+                return this;
+            }
+
+            public ButtonGenerateOption AddHandler(Action handler)
+            {
+                Toggled += handler;
+                return this;
+            }
+
+            internal void InvokeHandlers()
+            {
+                Toggled?.Invoke();
+            }
+        }
+
+        public ContextMenuStripBuilder AddButton(Action<ButtonGenerateOption> option)
+        {
+            var optionRef = new ButtonGenerateOption();
+            option.Invoke(optionRef);
+            var button = new ToolStripButton(optionRef.Text);
+            button.Click += (_, _) => optionRef.InvokeHandlers();
+            return this;
+        }
+
 
         public ThemeReferencedContextMenuStrip Build()
         {
