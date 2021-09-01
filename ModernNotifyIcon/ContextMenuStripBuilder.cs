@@ -25,7 +25,7 @@ namespace ModernNotifyIcon
 			option.Invoke(optionRef);
 			var toggle = new ToolStripButton(optionRef.Text);
 			toggle.Click += (_, _) => optionRef.InvokeHandlers(toggle.Checked = !toggle.Checked);
-			return this;
+			return AddItem(toggle);
 		}
 
 		public ContextMenuStripBuilder AddButton(Action<ButtonGenerateOption> option)
@@ -34,7 +34,7 @@ namespace ModernNotifyIcon
 			option.Invoke(optionRef);
 			var button = new ToolStripButton(optionRef.Text);
 			button.Click += (_, _) => optionRef.InvokeHandlers();
-			return this;
+			return AddItem(button);
 		}
 
 		public ThemeReferencedContextMenuStrip Build()
