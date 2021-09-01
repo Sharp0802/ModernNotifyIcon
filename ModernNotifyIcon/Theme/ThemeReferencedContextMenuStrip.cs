@@ -1,4 +1,5 @@
 ﻿using System.Windows.Forms;
+using Microsoft.Win32;
 
 namespace ModernNotifyIcon.Theme
 {
@@ -15,18 +16,8 @@ namespace ModernNotifyIcon.Theme
         public ThemeReferencedContextMenuStrip()
         {
             Renderer = ThemeReferencedRenderer = new ThemeReferencedRenderer();
-            ItemAdded += ItemsChanged;
-            ItemRemoved += ItemsChanged;
-        }
-
-        private void ItemsChanged(object sender, ToolStripItemEventArgs e)
-        {
-            foreach (var item in Items)
-            {
-                if (item is not ToolStripItem stripItem)
-                    continue;
-                stripItem.Padding = new Padding(0, Spacing, 0, Spacing);
-            }
+            ForeColor = ThemeDictionary.TextFillColorPrimary;
+            SystemEvents.UserPreferenceChanged += (_, _) => ForeColor = ThemeDictionary.TextFillColorPrimary;
         }
     }
 }
