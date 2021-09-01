@@ -4,9 +4,11 @@ namespace ModernNotifyIcon.Theme
 {
     public class ThemeReferencedContextMenuStrip : ContextMenuStrip
     {
+        public ThemeReferencedRenderer ThemeReferencedRenderer { get; }
+
         public ThemeReferencedContextMenuStrip()
         {
-            Renderer = new ThemeReferencedRenderer();
+            Renderer = ThemeReferencedRenderer = new ThemeReferencedRenderer();
         }
     }
 }
