@@ -18,7 +18,7 @@ namespace ModernNotifyIcon
 
         public ContextMenuStripBuilder AddText(string text) => AddItem(new ToolStripMenuItem(text));
 
-        public ContextMenuStripBuilder AddSeperator() => AddItem(new ToolStripSeparator());
+        public ContextMenuStripBuilder AddSeparator() => AddItem(new ToolStripSeparator());
 
         public ContextMenuStripBuilder AddToggle(Action<ToggleGenerateOption> option)
         {
