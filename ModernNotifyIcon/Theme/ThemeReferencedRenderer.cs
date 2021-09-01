@@ -9,7 +9,7 @@ namespace ModernNotifyIcon.Theme
 	/// </summary>
 	public class ThemeReferencedRenderer : ToolStripProfessionalRenderer
 	{
-		public int VerticalPadding { get; }
+		public int VerticalPadding { get; set; }
 
 		public ThemeReferencedRenderer() : base(new ThemeReferencedColorTable()) { }
 
