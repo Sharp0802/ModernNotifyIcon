@@ -6,6 +6,15 @@ ModernNotifyIcon is library that make you to can use windows 10 style menu for n
 
 ## How to use?
 
+In your csproj :
+```c#
+<PropertyGroup>
+    <!-- net5.0-windows10.0.19041.0 or above -->
+    <TargetFramework>net5.0-windows10.0.19041.0</TargetFramework>
+</PropertyGroup>
+```
+
+In your source code :
 ```c#
 using System.Drawing;
 using System.Reflection;
