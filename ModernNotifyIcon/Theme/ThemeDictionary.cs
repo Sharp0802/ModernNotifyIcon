@@ -2,7 +2,7 @@
 
 using Windows.UI.ViewManagement;
 
-namespace KakaotalkAdConcealer.Forms.Gui
+namespace ModernNotifyIcon.Theme
 {
     public static class ThemeDictionary
     {
