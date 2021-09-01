@@ -23,7 +23,7 @@ namespace ModernNotifyIcon
 		{
 			var optionRef = new ToggleGenerateOption();
 			option.Invoke(optionRef);
-			var toggle = new ToolStripButton(optionRef.Text);
+			var toggle = new ToolStripMenuItem(optionRef.Text);
 			toggle.Click += (_, _) => optionRef.InvokeHandlers(toggle.Checked = !toggle.Checked);
 			return AddItem(toggle);
 		}
@@ -32,7 +32,7 @@ namespace ModernNotifyIcon
 		{
 			var optionRef = new ButtonGenerateOption();
 			option.Invoke(optionRef);
-			var button = new ToolStripButton(optionRef.Text);
+			var button = new ToolStripMenuItem(optionRef.Text);
 			button.Click += (_, _) => optionRef.InvokeHandlers();
 			return AddItem(button);
 		}
