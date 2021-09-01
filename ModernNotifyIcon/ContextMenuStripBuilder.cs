@@ -8,7 +8,7 @@ namespace ModernNotifyIcon
 {
     public class ContextMenuStripBuilder
     {
-        protected List<ToolStripItem> Items { get; } = new(); 
+        protected List<ToolStripItem> Items { get; } = new();
 
         public ContextMenuStripBuilder AddItem(ToolStripItem item)
         {
@@ -87,7 +87,6 @@ namespace ModernNotifyIcon
             button.Click += (_, _) => optionRef.InvokeHandlers();
             return this;
         }
-
 
         public ThemeReferencedContextMenuStrip Build()
         {
