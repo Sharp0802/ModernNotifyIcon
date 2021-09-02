@@ -11,12 +11,12 @@ ModernNotifyIcon is library that make you to can use windows 10 style menu for n
 
 In your csproj :
 ```xml
-<PackageReference Include="ModernNotifyIcon" Version="1.0.0" />
+<PackageReference Include="ModernNotifyIcon" Version="1.1.0" />
 ```
 
 Or, if you using .net cli :
 ```powershell
-dotnet add package ModernNotifyIcon --version 1.0.0
+dotnet add package ModernNotifyIcon --version 1.1.0
 ```
 
 ## How to use?
