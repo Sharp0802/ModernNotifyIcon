@@ -10,7 +10,7 @@
 
     <!-- Versioning -->
     <PropertyGroup>
-        <DeclaredVersion>1.0</DeclaredVersion>
+        <DeclaredVersion>1.1</DeclaredVersion>
 
         <AssemblyVersion>$(DeclaredVersion).*</AssemblyVersion>
         <PackageVersion>$(DeclaredVersion)</PackageVersion>
@@ -26,6 +26,7 @@
         <PackageProjectUrl>https://github.com/Sharp0802/ModernNotifyIcon</PackageProjectUrl>
         <RepositoryUrl>https://github.com/Sharp0802/ModernNotifyIcon.git</RepositoryUrl>
         <RepositoryType>Git</RepositoryType>
+		<PackageTags>notifyicon;winforms;</PackageTags>
     </PropertyGroup>
 
 </Project>
