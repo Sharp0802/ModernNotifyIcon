@@ -37,6 +37,17 @@ namespace ModernNotifyIcon
 			return AddItem(button);
 		}
 
+		public ContextMenuStripBuilder AddSubmenu(string text, Action<ContextMenuStripBuilder> option)
+		{
+			var optionRef = new ContextMenuStripBuilder();
+			option.Invoke(optionRef);
+			var button = new ToolStripMenuItem(text)
+			{
+				DropDown = optionRef.Build()
+			};
+			return AddItem(button);
+		}
+
 		public ThemeReferencedContextMenuStrip Build()
 		{
 			const int padding = 5;
