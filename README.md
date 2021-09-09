@@ -38,18 +38,28 @@ using System.Windows.Forms;
 using ModernNotifyIcon;
 
 var notification = NotifyIconBuilder
-    .Create()
-    .Configure(builder => builder
-        .AddText("Sample text")
-        .AddSeparator()
-        .AddButton(option => option
-            .SetText("Sample button")
-            .AddHandler(() => { /* On state changed */ }))
-        .AddToggle(option => option
-            .SetText("Sample toggle")
-            .AddHandler(toggled => { /* One handler */ })
-            .AddHandler(toggled => { /* Another handler */ })))
-    .Build(Icon.ExtractAssociatedIcon(Assembly.GetExecutingAssembly().Location)); // Get icon of assembly
+	.Create()
+	.Configure(builder => builder
+		.AddText("Sample text")
+		.AddSeparator()
+		.AddButton(option => option
+			.SetText("Sample button")
+			.AddHandler(() => { /* On state changed */ }))
+		.AddToggle(option => option
+			.SetText("Sample toggle")
+			.AddHandler(toggled => { /* One handler */ })
+			.AddHandler(toggled => { /* Another handler */ }))
+		.AddSubmenu("Sample submenu", sub => sub
+			.AddText("Sample text")
+			.AddSeparator()
+			.AddButton(option => option
+				.SetText("Sample button")
+				.AddHandler(() => { /* On state changed */ }))
+			.AddToggle(option => option
+				.SetText("Sample toggle")
+				.AddHandler(toggled => { /* One handler */ })
+				.AddHandler(toggled => { /* Another handler */ }))))
+	.Build(Icon.ExtractAssociatedIcon(Assembly.GetExecutingAssembly().Location)!);
     
 notification.Visible = true;
 ```
